@@ -178,7 +178,7 @@ namespace pk3DS
 
         private void B_RandAll_Click(object sender, EventArgs e)
         {
-            if (!CHK_Category.Checked && !CHK_Type.Checked)
+            if (!CHK_Category.Checked && !CHK_Type.Checked && !CHK_Damage.Checked)
             {
                 WinFormsUtil.Alert("Cannot randomize Moves.", "Please check any of the options on the right to randomize Moves.");
                 return;
@@ -198,6 +198,36 @@ namespace pk3DS
                 // Change Move Type
                 if (CHK_Type.Checked)
                     CB_Type.SelectedIndex = rnd.Next(0, 18);
+
+                // Change Move Power
+                if (CHK_Damage.Checked && CB_Category.SelectedIndex > 0 && NUD_Power.Value >= 10)
+                {
+                    if (rnd.Next(0, 3) != 2)
+                    {
+                        // "Regular" move
+                        NUD_Power.Value = rnd.Next(11) * 5 + 50; // 50...100
+                    } else
+                    {
+                        // "Extreme" move
+                        NUD_Power.Value = rnd.Next(27) * 5 + 20; // 20...150
+                    }
+
+                    // Tiny chance for massive power jumps
+                    for (int j = 0; j < 2; j++) 
+                    {
+                        if (rnd.Next(100) == 0)
+                        {
+                            NUD_Power.Value += 50;
+                        }
+                    }
+
+                    // Handle Multihit moves
+                    if (NUD_HitMax.Value > 0)
+                    {
+                        NUD_Power.Value = (int)Math.Round(NUD_Power.Value / (NUD_HitMax.Value + NUD_HitMin.Value / 2) / 5) * 5;
+                    }
+                }
+                    
             }
             WinFormsUtil.Alert("All Moves have been randomized!");
         }

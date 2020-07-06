@@ -91,6 +91,7 @@
             this.B_Metronome = new System.Windows.Forms.Button();
             this.B_Table = new System.Windows.Forms.Button();
             this.CLB_Flags = new System.Windows.Forms.CheckedListBox();
+            this.CHK_Damage = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_HitMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_HitMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Priority)).BeginInit();
@@ -755,11 +756,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CHK_Damage);
             this.groupBox1.Controls.Add(this.CHK_Category);
             this.groupBox1.Controls.Add(this.CHK_Type);
             this.groupBox1.Location = new System.Drawing.Point(333, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(98, 55);
+            this.groupBox1.Size = new System.Drawing.Size(98, 78);
             this.groupBox1.TabIndex = 64;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
@@ -784,6 +786,16 @@
             this.CHK_Type.Text = "Type";
             this.CHK_Type.UseVisualStyleBackColor = true;
             // 
+            // CHK_Damage
+            // 
+            this.CHK_Damage.AutoSize = true;
+            this.CHK_Damage.Location = new System.Drawing.Point(6, 49);
+            this.CHK_Damage.Name = "CHK_Damage";
+            this.CHK_Damage.Size = new System.Drawing.Size(66, 17);
+            this.CHK_Damage.TabIndex = 2;
+            this.CHK_Damage.Text = "Damage";
+            this.CHK_Damage.UseVisualStyleBackColor = true;
+            // 
             // B_Metronome
             // 
             this.B_Metronome.Location = new System.Drawing.Point(333, 33);
@@ -796,7 +808,7 @@
             // 
             // B_Table
             // 
-            this.B_Table.Location = new System.Drawing.Point(356, 117);
+            this.B_Table.Location = new System.Drawing.Point(356, 143);
             this.B_Table.Name = "B_Table";
             this.B_Table.Size = new System.Drawing.Size(75, 23);
             this.B_Table.TabIndex = 66;
@@ -807,9 +819,9 @@
             // CLB_Flags
             // 
             this.CLB_Flags.FormattingEnabled = true;
-            this.CLB_Flags.Location = new System.Drawing.Point(328, 146);
+            this.CLB_Flags.Location = new System.Drawing.Point(328, 176);
             this.CLB_Flags.Name = "CLB_Flags";
-            this.CLB_Flags.Size = new System.Drawing.Size(103, 229);
+            this.CLB_Flags.Size = new System.Drawing.Size(103, 199);
             this.CLB_Flags.TabIndex = 70;
             // 
             // MoveEditor6
@@ -965,8 +977,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox CHK_Category;
         private System.Windows.Forms.CheckBox CHK_Type;
+        private System.Windows.Forms.CheckBox CHK_Damage;
         private System.Windows.Forms.Button B_Metronome;
         private System.Windows.Forms.Button B_Table;
-        private System.Windows.Forms.CheckedListBox CLB_Flags;
+        private System.Windows.Forms.CheckedListBox CLB_Flags;        
     }
 }
