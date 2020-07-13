@@ -189,7 +189,11 @@ namespace pk3DS.Core.Randomizers
         {
             list.AddRange(Enumerable.Range(495, 143)); // Snivy - Volcarona
             if (L) list.AddRange(Enumerable.Range(638, 9)); // Unova Legends
-            if (E) list.Add(494); list.AddRange(Enumerable.Range(647, 3)); // Victini, Keldeo, Meloetta, Genesect
+            if (E)
+            {
+                list.Add(494); //Victini
+                list.AddRange(Enumerable.Range(647, 3));// Victini, Keldeo, Meloetta, Genesect
+            }
         }
 
         private void AddGen6Species(List<int> list)
